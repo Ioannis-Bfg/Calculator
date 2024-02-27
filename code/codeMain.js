@@ -81,10 +81,9 @@ let past_operator=false;
 
 function getInput(num){
     console.log(num);
-    let operator='';
     if(!past_operator){
         if((num==='/' || num==='*' || num==='-' || num==='+')){
-            operator=num;
+            op=num;
             output.textContent+=num;
             past_operator=true;
         } else {
@@ -94,6 +93,9 @@ function getInput(num){
     } else {
         if(num==='='){
             output.textContent+=num;
+            let result=operate(op,num_1,num_2);
+            console.log(result);
+            output.textContent+=result;
         }else {
             num_2+=num;
             output.textContent+=num;

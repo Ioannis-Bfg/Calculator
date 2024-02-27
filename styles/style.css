@@ -43,8 +43,11 @@ body{
     display: flex;
     padding:8%;
     justify-content: flex-end;
-    /* border: 10px solid rgb(91, 91, 92); */
     background-color: antiquewhite;
+    width: 20vw; 
+    height: 10vh; 
+    min-width: 200px;
+    min-height: 50px; 
 }
 #output {
     display: flex;

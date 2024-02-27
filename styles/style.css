@@ -23,8 +23,9 @@ body{
 }
 
 #calc {
-    border: 10px solid black;
+    border: 10px solid rgb(48, 48, 48);
     border-radius: 5%;
+    background-color: #616168;
 }
 
 #buttons button{
@@ -32,9 +33,13 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #ffffff;
     font-family: Roboto,sans-serif;
-    /* border: transparent; */
+    border: transparent; 
+    border-radius: 5px;
 }
+
+
 #buttons{
     display: flex;
 }
@@ -44,6 +49,7 @@ body{
     padding:8%;
     justify-content: flex-end;
     background-color: antiquewhite;
+    border-radius: 13px 13px 0px 0px;
     width: 20vw; 
     height: 10vh; 
     min-width: 200px;
@@ -68,4 +74,51 @@ body{
 
 #first_row button, #second_row button, #third_row button, #fourth_row button{
     max-width: 5vw;
+    color: #363636;
+    font-size: 1.1em;
+    font-weight: 900;
+}
+
+button#clear_row {
+    border-radius: 0px 0px 10px 10px;
+    font-size: 24px;
+    font-weight: 800;
+    background-color: #222222 ;
+    color: #e7e7e7;
+}
+
+
+div#buttons #fourth_row #btn_equals {
+    background-color: #f89734;
+    font-size: 1.3em;
+}
+
+div#output {
+    letter-spacing: 2px;
+    font-size: 2em;
+}
+
+#buttons button:hover {
+    background-color: lightgrey; 
+    cursor: pointer;
+}
+
+#buttons button:active {
+    transform: translateY(2px);
+}
+
+
+#buttons #fourth_row #btn_equals:hover {
+    background-color: #c5772a;
+    color:#fcfcfc;
+}
+
+button#clear_row:hover {
+    color: #e6e6e6 ;
+    background-color: #3f3f3f ;
+}
+
+button#clear_row:active {
+    color: #e6e6e6 ;
+    background-color: #923737 ;
 }

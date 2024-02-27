@@ -1,5 +1,5 @@
-let num_1=0;
-let num_2=0;
+let num_1='';
+let num_2='';
 let op='';
 
 /////////////////////////////////
@@ -24,16 +24,16 @@ function div(a,b){
 
 function operate(op,num_1,num_2){
     switch(op){
-        case 'addition':{
+        case '+':{
             return add(num_1,num_2);
         }
-        case 'subtraction':{
+        case '-':{
             return sub(num_1,num_2);
         }
-        case 'multiplication':{
+        case '*':{
             return mul(num_1,num_2);
         }
-        case 'division':{
+        case '/':{
             return div(num_1,num_2);
         }
     }
@@ -67,7 +67,7 @@ btn_division.addEventListener('click', function() { passVariableToGetInput('/');
 btn_6.addEventListener('click', function() { passVariableToGetInput('6'); });
 btn_5.addEventListener('click', function() { passVariableToGetInput('5'); });
 btn_4.addEventListener('click', function() { passVariableToGetInput('4'); });
-btn_multiplication.addEventListener('click', function() { passVariableToGetInput('x'); });
+btn_multiplication.addEventListener('click', function() { passVariableToGetInput('*'); });
 btn_3.addEventListener('click', function() { passVariableToGetInput('3'); });
 btn_2.addEventListener('click', function() { passVariableToGetInput('2'); });
 btn_1.addEventListener('click', function() { passVariableToGetInput('1'); });
@@ -77,14 +77,45 @@ btn_0.addEventListener('click', function() { passVariableToGetInput('0'); });
 btn_addition.addEventListener('click', function() { passVariableToGetInput('+'); });
 btn_equals.addEventListener('click', function() { passVariableToGetInput('='); });
 btn_clear.addEventListener('click', function() { passVariableToGetInput('clear_row'); });
+let past_operator=false;
 
 function getInput(num){
     console.log(num);
-    if(num==='clear_row'){
-        output.textContent='';
+    let operator='';
+    if(!past_operator){
+        if((num==='/' || num==='*' || num==='-' || num==='+')){
+            operator=num;
+            output.textContent+=num;
+            past_operator=true;
+        } else {
+            output.textContent+=num;
+            num_1+=num;
+        }
     } else {
-        output.textContent+=num;
+        if(num==='='){
+            output.textContent+=num;
+        }else {
+            num_2+=num;
+            output.textContent+=num;
+        }
     }
+
+    // if(num==='clear_row'){
+    //     output.textContent='';
+    //     num_1=0;
+    //     num_2=0;
+    // } else if((num==='/' || num==='x' || num==='-' || num==='+') && !past_operator){
+    //     num_1=parseFloat(output.textContent);
+    //     operator=num;
+    //     output.textContent+=num;
+    //     past_operator=true;
+    // } else {
+    //     if(past_operator){
+
+    //     }
+    //     output.textContent+=num;
+    // }
+    console.log(`num_1 is ${num_1} .... num_2 is ${num_2}`);
 }
 
 function passVariableToGetInput(variable) {

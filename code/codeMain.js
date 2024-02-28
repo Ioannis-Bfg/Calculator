@@ -103,7 +103,16 @@ function getInput(num){
             op=num;
             output.textContent+=num;
             past_operator=true;
-        } else {
+        } else if(num==='='){
+            let lastc = output.textContent.charAt(output.textContent.length - 1);
+            if(lastc==='='){
+                output.textContent=num_1;
+                return;
+            } else{
+                output.textContent+=num;
+            }
+        } 
+        else {
             output.textContent+=num;
             num_1+=num;
         }
